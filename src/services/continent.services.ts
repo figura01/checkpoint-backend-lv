@@ -17,4 +17,8 @@ export default class ContinentService {
     const newContinent = this.db.create({ ...data });
     return await this.db.save(newContinent);
   }
+
+  async deleteContinent(id: number ) {
+    return await this.db.delete(id);
+  }
 }

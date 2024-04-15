@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
-import { Field, InputType, ObjectType } from "type-graphql";
-import Continent, { PartialContientInput } from './continent.entity'
+import { Field, ID, InputType, ObjectType } from "type-graphql";
+import Continent from './continent.entity'
 
 @ObjectType()
 @Entity()
@@ -40,8 +40,8 @@ export class CreateCountryInput {
   @Field({ nullable: false })
   emojy: string;
 
-  @Field({ nullable: false })
-  contient: PartialContientInput;
+  @Field(() => ID)
+  continent: Continent;
 }
 
 @ObjectType()
@@ -56,5 +56,5 @@ export class findedCountryByCode {
   emojy: string;
 
   @Field({ nullable: false })
-  continent: PartialContientInput;
+  continent: Continent;
 }

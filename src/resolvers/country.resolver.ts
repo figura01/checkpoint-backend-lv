@@ -15,6 +15,11 @@ export default class CountryResolver {
     return await new CountryService().findCountryByCode(code);
   }
 
+  @Query(() => [Country])
+  async findByContinent(@Arg("id") id: number) {
+    return await new CountryService().findCountryByContinentId(id);
+  }
+
   @Mutation(() => Country)
   async createCountry(@Arg('data') data: CreateCountryInput) {
     return await new CountryService().createCountry(data);

@@ -21,4 +21,12 @@ export default class CountryService {
     const newCountry = this.db.create({ ...data });
     return await this.db.save(newCountry);
   }
+
+  async findCountryByContinentId(id: number) {
+    const countries = await this.db.find({
+      where: { continent: { id } },
+      relations: { continent: true },
+    });
+    return countries
+  }
 }

@@ -18,13 +18,8 @@ export default class Continent {
 }
 
 @InputType()
-export class CreateContinentInput {
-  @Field({ nullable: false})
-  name: string
-}
-
-@InputType()
-export class PartialContientInput {
-  @Field(() => ID)
-  id: number;
+export class CreateContinentInput
+{
+  @Field()
+  name: string;
 }
