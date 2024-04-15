@@ -1,0 +1,6 @@
+type Recipe {
+  id: ID
+  name: String
+  code: String
+  emojy: String
+}
